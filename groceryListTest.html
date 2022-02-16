@@ -51,7 +51,7 @@
     </head>
     <body>
         <div class="ingredients">
-            <button class="addList" type="button" onclick="addtolist();">Add to List</button>
+            <button class="addList" type="button" onclick="addtolist();">Add to List</button> <!--html for the ingredients and button associated with the first recipe-->
             <h1>Ingredients for Roasted Vegetables</h1>
             <ul>
                 <li>Carrot</li>
@@ -60,7 +60,7 @@
             </ul>
         </div>
         <div class="ingredients2">
-            <button class="addList2" type="button" onclick="addtolist2();">Add to List</button>
+            <button class="addList2" type="button" onclick="addtolist2();">Add to List</button> <!--html for the ingredients and button associated with the second recipe-->
             <h1>Ingredients for a Cake</h1>
             <ul>
                 <li>Milk</li>
@@ -71,11 +71,11 @@
         <div class="table">
             <h3 id="ingredientTitle">Ingredients</h3>
             <h3 id="amountTitle">Amount</h3>
-            <hr class="tableHorizontal">
-            <div class="tableVertical"></div>
-            <ul id="ingredientOutput">
+            <hr class="tableHorizontal"> <!--the horizontal bar of the ingredients table-->
+            <div class="tableVertical"></div> <!--the vertical bar of the ingredients table-->
+            <ul id="ingredientOutput"> <!--the empty unordered list for the ingredients side of the table-->
             </ul>
-            <ul id="amountOutput">
+            <ul id="amountOutput"> <!--the empty unordered list for the amounts side of the table-->
             </ul>
         </div>
         <script>
@@ -85,7 +85,7 @@
                 const amount1 = ["1lb", "1lb", "3tbsp"];
                 for (let i = 0; i < ingredient1.length; i++) {
                     console.log("got here");
-                    var li = document.createElement("li");
+                    var li = document.createElement("li"); /*I commented the loops below, bassically the same code just with different ingredient and amount arrays*/
                     var t = document.createTextNode(ingredient1[i]);
                     item = document.getElementById("ingredientOutput");
                     li.appendChild(t);
@@ -104,25 +104,25 @@
             }
             function addtolist2() {
                 console.log("hello");
-                const ingredient2 = ["Milk", "Sugar", "Eggs"];
-                const amount2 = ["2 cups", "1 cup", "2"];
-                for (let i = 0; i < ingredient2.length; i++) {
-                    console.log("got here");
-                    var li = document.createElement("li");
-                    var t = document.createTextNode(ingredient2[i]);
+                const ingredient2 = ["Milk", "Sugar", "Eggs"]; /*the ingredients for the cake recipe*/
+                const amount2 = ["2 cups", "1 cup", "2"]; /*the amount of each ingredient for the cake recipe*/
+                for (let i = 0; i < ingredient2.length; i++) { 
+                    console.log("got here"); /*I put this console logs in different parts of the loop for testing reasons, to see how far the program got*/
+                    var li = document.createElement("li"); /*creating a new list item*/
+                    var t = document.createTextNode(ingredient2[i]); 
                     item = document.getElementById("ingredientOutput");
-                    li.appendChild(t);
+                    li.appendChild(t); /*adds the text to the list item which is defined as one of the items from the ingredients array*/
                     console.log(item);
-                    item.appendChild(li)
+                    item.appendChild(li) /*adds the list item to the ingredients unordered list*/
                 }
                 for (let i = 0; i < 3; i++) {
                     console.log("got here");
-                    var li = document.createElement("li");
-                    var t = document.createTextNode(amount2[i]);
+                    var li = document.createElement("li"); /*Creating a list item*/
+                    var t = document.createTextNode(amount2[i]); 
                     item = document.getElementById("amountOutput");
-                    li.appendChild(t);
+                    li.appendChild(t); /*adds the text to the list item, in this case it is one of the items from the amounts array*/
                     console.log(item);
-                    item.appendChild(li)
+                    item.appendChild(li) /*adds the list item to the amounts unordered list*/
                 }
             }
         </script>
