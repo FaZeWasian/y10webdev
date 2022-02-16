@@ -1,0 +1,130 @@
+<html>
+    <head>
+        <style>
+            #amountOutput {
+                position: absolute;
+                top: 70px;
+                left:910px;
+            }
+            #ingredientOutput {
+                position: absolute;
+                top: 70px;
+                left:700px;
+            }
+            #ingredientTitle {
+                position: absolute;
+                top: 10px;
+                left: 740px;
+            }
+            #amountTitle {
+                position: absolute;
+                top: 10px;
+                left: 960px;
+            }
+            .tableHorizontal {
+                width: 400px;
+                height: 3px;
+                position: absolute;
+                left: 700px;
+                top: 50px;
+                background-color: black;
+            }
+            .tableVertical {
+                border-left: 3px solid black;
+                height: 200px;
+                position: absolute;
+                left: 885px;
+                top: 60px;
+
+            }
+            .addList {
+                position: absolute;
+                top: 80px;
+                left: 200px;
+            }
+            .addList2 {
+                position: absolute;
+                top: 210px;
+                left: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="ingredients">
+            <button class="addList" type="button" onclick="addtolist();">Add to List</button>
+            <h1>Ingredients for Roasted Vegetables</h1>
+            <ul>
+                <li>Carrot</li>
+                <li>Potato</li>
+                <li>Olive Oil</li>
+            </ul>
+        </div>
+        <div class="ingredients2">
+            <button class="addList2" type="button" onclick="addtolist2();">Add to List</button>
+            <h1>Ingredients for a Cake</h1>
+            <ul>
+                <li>Milk</li>
+                <li>Sugar</li>
+                <li>Eggs</li>
+            </ul>
+        </div>
+        <div class="table">
+            <h3 id="ingredientTitle">Ingredients</h3>
+            <h3 id="amountTitle">Amount</h3>
+            <hr class="tableHorizontal">
+            <div class="tableVertical"></div>
+            <ul id="ingredientOutput">
+            </ul>
+            <ul id="amountOutput">
+            </ul>
+        </div>
+        <script>
+            function addtolist() {
+                console.log("hello");
+                const ingredient1 = ["Carrot", "Potato", "Olive Oil"];
+                const amount1 = ["1lb", "1lb", "3tbsp"];
+                for (let i = 0; i < ingredient1.length; i++) {
+                    console.log("got here");
+                    var li = document.createElement("li");
+                    var t = document.createTextNode(ingredient1[i]);
+                    item = document.getElementById("ingredientOutput");
+                    li.appendChild(t);
+                    console.log(item);
+                    item.appendChild(li)
+                }
+                for (let i = 0; i < 3; i++) {
+                    console.log("got here");
+                    var li = document.createElement("li");
+                    var t = document.createTextNode(amount1[i]);
+                    item = document.getElementById("amountOutput");
+                    li.appendChild(t);
+                    console.log(item);
+                    item.appendChild(li)
+                }
+            }
+            function addtolist2() {
+                console.log("hello");
+                const ingredient2 = ["Milk", "Sugar", "Eggs"];
+                const amount2 = ["2 cups", "1 cup", "2"];
+                for (let i = 0; i < ingredient2.length; i++) {
+                    console.log("got here");
+                    var li = document.createElement("li");
+                    var t = document.createTextNode(ingredient2[i]);
+                    item = document.getElementById("ingredientOutput");
+                    li.appendChild(t);
+                    console.log(item);
+                    item.appendChild(li)
+                }
+                for (let i = 0; i < 3; i++) {
+                    console.log("got here");
+                    var li = document.createElement("li");
+                    var t = document.createTextNode(amount2[i]);
+                    item = document.getElementById("amountOutput");
+                    li.appendChild(t);
+                    console.log(item);
+                    item.appendChild(li)
+                }
+            }
+        </script>
+    </body>
+</html>
